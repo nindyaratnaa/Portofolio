@@ -35,7 +35,7 @@ const projects = [
         image: "/api/placeholder/400/250",
         technologies: ["Figma", "Graphic Design", "Visual Identity", "Social Media"],
         liveUrl: "https://instagram.com/dpmfilkomub",
-        githubUrl: "https://github.com/nindyaratnaa/dmp-designs"
+        githubUrl: "https://www.figma.com/design/b3RQmTzkZahaP69sBUClGc/Backup?node-id=31-2&t=ZJ1INVzexdoG8JnX-1"
     }
 ];
 
