@@ -71,10 +71,12 @@ export default function HeroSection() {
                                     View My Work
                                     <ArrowRight className="ml-2 h-5 w-5" />
                                 </Button>
-                                <Button size="lg" variant="outline">
-                                    <Download className="mr-2 h-5 w-5" />
-                                    Download CV
-                                </Button>
+                                <a href="/cv/cv-anya.pdf" download className="inline-block" >
+                                    <Button size="lg" variant="outline">
+                                        <Download className="mr-2 h-5 w-5" />
+                                        Download CV
+                                    </Button>
+                                </a>
                             </div>
                             <div className="flex gap-4 justify-center">
                                 <Button size="sm" variant="ghost" className="p-2" asChild>
