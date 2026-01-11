@@ -1,43 +1,62 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Github } from "lucide-react";
+import { Github, ExternalLink, Figma, Instagram } from "lucide-react";
+
+const linkIcons = {
+  github: Github,
+  figma: Figma,
+//   live: ExternalLink,
+  instagram: Instagram
+};
 
 const projects = [
     {
-        title: "ReuseHub – Sustainable Goods Exchange Platform",
+        title: "ReuseHub – Exchange Platform",
         description: "Web-based platform that enables users to post, search, and exchange reusable items to promote sustainability and reduce waste",
-        image: "/api/placeholder/400/250",
         technologies: ["HTML5", "Tailwind CSS", "JavaScript", "PHP", "MySQL"],
-        liveUrl: "https://example.com",
-        githubUrl: "https://github.com/nindyaratnaa/ReuseHub",
+        role: "Front-End Developer & Back-End Assistant",
         period: "Oct 2025 - Dec 2025",
-        role: "Front-End Developer & Back-End Assistant"
+        links: [
+            { type: "github", url: "https://github.com/nindyaratnaa/ReuseHub", label: "Code" }
+            //   { type: "figma", url: "...", label: "Design" },
+            //   { type: "live", url: "...", label: "Website" },
+            //   { type: "instagram", url: "...", label: "Content" }
+        ]
     },
     {
         title: "Bina Lukis Mitra Website",
         description: "Responsive website development for art organization with focus on usability and clean UI",
-        image: "/api/placeholder/400/250",
-        technologies: ["HTML5", "CSS3", "JavaScript", "Responsive Design"],
-        liveUrl: "https://example.com",
-        githubUrl: "https://github.com/nindyaratnaa/bina-lukis-mitra"
+        technologies: ["HTML5", "Tailwind CSS", "JavaScript", "Responsive Design"],
+        role: "Website Developer",
+        period: "Aug 2024 - Present",
+        links: [
+            { type: "github", url: "https://github.com/nindyaratnaa/Bina-Lukis", label: "Code" },
+            { type: "instagram", url: "https://www.instagram.com/binalukismitra_/", label: "Content" }
+        ]
     },
     {
-        title: "Computer Vision Research",
+        title: "BRONE Research Team",
         description: "Image classification and object detection models for person identification using PyTorch",
-        image: "/api/placeholder/400/250",
         technologies: ["Python", "PyTorch", "Computer Vision", "Machine Learning"],
-        liveUrl: "https://example.com",
-        githubUrl: "https://github.com/nindyaratnaa/cv-research"
+        role: "Computer Vision Researcher",
+        period: "Nov 2025 - Present",
+        links: [
+            { type: "github", url: "https://github.com/nindyaratnaa/TryOn-Brone", label: "Code" }
+        ]
     },
     {
         title: "DPM FILKOM Visual Content",
         description: "Social media content design and visual identity materials for student organization",
-        image: "/api/placeholder/400/250",
         technologies: ["Figma", "Graphic Design", "Visual Identity", "Social Media"],
-        liveUrl: "https://instagram.com/dpmfilkomub",
-        githubUrl: "https://www.figma.com/design/b3RQmTzkZahaP69sBUClGc/Backup?node-id=31-2&t=ZJ1INVzexdoG8JnX-1"
-    }
-];
+        role: "Graphic Design",
+        period: "Feb 2025 - Des 2025",
+        links: [
+            { type: "figma", url: "https://www.figma.com/design/b3RQmTzkZahaP69sBUClGc/Backup?node-id=31-2&t=ZJ1INVzexdoG8JnX-1", label: "Design" },
+            { type: "instagram", url: "https://instagram.com/dpmfilkomub", label: "Content" }
+        ]
+    },
+
+]
 
 export default function ProjectsSection() {
     return (
@@ -96,20 +115,19 @@ export default function ProjectsSection() {
                                         </span>
                                     ))}
                                 </div>
-                                <div className="flex gap-2">
-                                    <Button size="sm" variant="outline" asChild>
-                                        <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                                            <ExternalLink className="h-4 w-4 mr-2" />
-                                            Live Demo
+                                <div className="flex flex-wrap gap-2">
+                                {project.links.map((link, i) => {
+                                    const Icon = linkIcons[link.type] || ExternalLink;
+                                    return (
+                                    <Button key={i} size="sm" variant="outline" asChild>
+                                        <a href={link.url} target="_blank" rel="noopener noreferrer">
+                                        <Icon className="h-4 w-4 mr-2" />
+                                        {link.label}
                                         </a>
                                     </Button>
-                                    <Button size="sm" variant="outline" asChild>
-                                        <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                                            <Github className="h-4 w-4 mr-2" />
-                                            Code
-                                        </a>
-                                    </Button>
-                                </div>
+                                    );
+                                })}
+                                </div>                                
                             </div>
                         </motion.div>
                     ))}
