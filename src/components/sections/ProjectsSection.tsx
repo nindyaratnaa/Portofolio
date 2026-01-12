@@ -16,6 +16,7 @@ const projects = [
         technologies: ["HTML5", "Tailwind CSS", "JavaScript", "PHP", "MySQL"],
         role: "Front-End Developer & Back-End Assistant",
         period: "Oct 2025 - Dec 2025",
+        image: "public/Reuse-hub.png",
         links: [
             { type: "github", url: "https://github.com/nindyaratnaa/ReuseHub", label: "Code" }
             //   { type: "figma", url: "...", label: "Design" },
@@ -29,6 +30,7 @@ const projects = [
         technologies: ["HTML5", "Tailwind CSS", "JavaScript", "Responsive Design"],
         role: "Website Developer",
         period: "Aug 2024 - Present",
+        image: "public/Bina-lukis.png",
         links: [
             { type: "github", url: "https://github.com/nindyaratnaa/Bina-Lukis", label: "Code" },
             { type: "instagram", url: "https://www.instagram.com/binalukismitra_/", label: "Content" }
@@ -50,6 +52,7 @@ const projects = [
         technologies: ["Figma", "Graphic Design", "Visual Identity", "Social Media"],
         role: "Graphic Design",
         period: "Feb 2025 - Des 2025",
+        image: "public/DPM-media.png",
         links: [
             { type: "figma", url: "https://www.figma.com/design/b3RQmTzkZahaP69sBUClGc/Backup?node-id=31-2&t=ZJ1INVzexdoG8JnX-1", label: "Design" },
             { type: "instagram", url: "https://instagram.com/dpmfilkomub", label: "Content" }
@@ -85,7 +88,14 @@ export default function ProjectsSection() {
                             transition={{ duration: 0.5, delay: index * 0.1 }}
                             className="bg-card rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow"
                         >
-                            <div className="aspect-video bg-muted"></div>
+                            {/* <div className="aspect-video bg-muted"></div> */}
+                            <div className="relative aspect-video overflow-hidden rounded-lg border bg-card">
+                                <img
+                                    src={project.image}
+                                    alt={project.title}
+                                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                />
+                            </div>
                             <div className="p-6">
                                 <div className="flex justify-between items-start mb-2">
                                     <h3 className="text-xl font-semibold text-foreground">
