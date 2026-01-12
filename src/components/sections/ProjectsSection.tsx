@@ -127,7 +127,7 @@ export default function ProjectsSection() {
                                 </div>
                                 <div className="flex flex-wrap gap-2">
                                 {project.links.map((link, i) => {
-                                    const Icon = linkIcons[link.type] || ExternalLink;
+                                    const Icon = linkIcons[link.type as keyof typeof linkIcons] || ExternalLink;
                                     return (
                                     <Button key={i} size="sm" variant="outline" asChild>
                                         <a href={link.url} target="_blank" rel="noopener noreferrer">
