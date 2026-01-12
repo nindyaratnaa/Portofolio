@@ -189,7 +189,7 @@
     }
 
     .btn-gradient:hover::before {
-        opacity: 1;
+        opacity: 0.5;
     }
 
     .dark .btn-gradient {
