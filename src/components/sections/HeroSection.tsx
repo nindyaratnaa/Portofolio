@@ -8,25 +8,25 @@ const stats = [
     { 
         number: "2+", 
         label: "Years Experience",
-        description: "In frontend development",
+        description: "Frontend & UI development",
         icon: <Code className="h-6 w-6 text-primary" />
     },
     { 
         number: "30+", 
-        label: "Projects Completed",
-        description: "UI/UX & Frontend",
+        label: "Projects Built",
+        description: "Web, UI & systems",
         icon: <Globe className="h-6 w-6 text-primary" />
     },
     { 
-        number: "100%", 
-        label: "Client Satisfaction",
-        description: "Happy clients",
+        number: "6+", 
+        label: "Tech Stack",
+        description: "Frameworks & tools",
         icon: <Palette className="h-6 w-6 text-primary" />
     },
     { 
-        number: "24/7", 
-        label: "Learning Mode",
-        description: "Always improving",
+        number: "5+", 
+        label: "Team Projects",
+        description: "Research & development",
         icon: <Smartphone className="h-6 w-6 text-primary" />
     }
 ];
