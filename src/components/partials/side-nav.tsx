@@ -1,6 +1,5 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import { HiOutlineXMark } from "react-icons/hi2";
-import { Link } from 'react-router-dom';
 import { ModeToggle } from '../mode-toggle';
 import Text from '../custom-ui/text';
 import { 
@@ -9,7 +8,6 @@ import {
     Code, 
     Briefcase, 
     Mail, 
-    Newspaper,
     Award
 } from 'lucide-react';
 
