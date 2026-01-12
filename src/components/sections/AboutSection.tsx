@@ -23,15 +23,15 @@ const interests = [
 ];
 
 const stats = [
-  { number: "2+", label: "Years Experience" },
-  { number: "30+", label: "Projects" },
-  { number: "100%", label: "Commitment" },
-  { number: "∞", label: "Curiosity" }
+  { number: "2+", label: "Years of Experience" },
+  { number: "30+", label: "Projects Built" },
+  { number: "5+", label: "Technologies Used" },
+  { number: "10+", label: "Team & Solo Projects" }
 ];
 
 export default function AboutSection() {
   return (
-    <section id="about" className="relative py-28 bg-background ">
+    <section id="about" className="relative py-28 bg-background">
       {/* background glow */}
       <div className="absolute top-1/2 left-1/2 w-[600px] h-[600px] bg-primary/10 blur-[140px] rounded-full -translate-x-1/2 -translate-y-1/2 -z-10" />
 
