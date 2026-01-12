@@ -5,7 +5,7 @@ import { Github, ExternalLink, Figma, Instagram } from "lucide-react";
 const linkIcons = {
   github: Github,
   figma: Figma,
-//   live: ExternalLink,
+  live: ExternalLink,
   instagram: Instagram
 };
 

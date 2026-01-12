@@ -33,7 +33,7 @@ const stats = [
 
 export default function HeroSection() {
     return (
-        <section className="relative w-full overflow-hidden bg-background pt-[80px]">
+        <section className="relative w-full overflow-hidden space-bg dark:space-bg pt-[80px]">
             <div className="absolute inset-0">
                 <Particles />
             </div>
@@ -51,7 +51,7 @@ export default function HeroSection() {
                                     label="Hello, I'm" 
                                     className="text-xl md:text-2xl text-muted-foreground mb-2" 
                                 />
-                                <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-4">
+                                <h1 className="text-4xl md:text-6xl font-bold gradient-text mb-4">
                                     Anindya Ratna Paramitha
                                 </h1>
                                 <Text 
@@ -64,7 +64,7 @@ export default function HeroSection() {
                                 computer vision research, and graphic design. Passionate about combining technology with creative solutions.
                             </p>
                             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-                                <Button size="lg" className="bg-primary hover:bg-primary/90" onClick={() => {
+                                <Button size="lg" variant="cyber" onClick={() => {
                                     const element = document.querySelector('#projects');
                                     if (element) element.scrollIntoView({ behavior: 'smooth' });
                                 }}>
@@ -72,24 +72,24 @@ export default function HeroSection() {
                                     <ArrowRight className="ml-2 h-5 w-5" />
                                 </Button>
                                 <a href="/cv/cv-anya.pdf" download className="inline-block" >
-                                    <Button size="lg" variant="outline">
+                                    <Button size="lg" variant="outline" className="glass">
                                         <Download className="mr-2 h-5 w-5" />
                                         Download CV
                                     </Button>
                                 </a>
                             </div>
                             <div className="flex gap-4 justify-center">
-                                <Button size="sm" variant="ghost" className="p-2" asChild>
+                                <Button size="sm" variant="ghost" className="p-2 glass hover:neon" asChild>
                                     <a href="https://github.com/nindyaratnaa" target="_blank" rel="noopener noreferrer">
                                         <Github className="h-5 w-5" />
                                     </a>
                                 </Button>
-                                <Button size="sm" variant="ghost" className="p-2" asChild>
+                                <Button size="sm" variant="ghost" className="p-2 glass hover:neon" asChild>
                                     <a href="https://linkedin.com/in/nindyaratnaa" target="_blank" rel="noopener noreferrer">
                                         <Linkedin className="h-5 w-5" />
                                     </a>
                                 </Button>
-                                <Button size="sm" variant="ghost" className="p-2" onClick={() => {
+                                <Button size="sm" variant="ghost" className="p-2 glass hover:neon" onClick={() => {
                                     const element = document.querySelector('#contact');
                                     if (element) element.scrollIntoView({ behavior: 'smooth' });
                                 }}>
@@ -111,11 +111,11 @@ export default function HeroSection() {
                                     initial={{ opacity: 0, y: 20 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
-                                    className="bg-card p-6 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 border border-border/50 hover:border-primary/20"
+                                    className="glass p-6 rounded-lg hover:shadow-md transition-all duration-300 hover:scale-105 dark:hover:neon"
                                 >
                                     <div className="flex items-center gap-3 mb-3">
-                                        {stat.icon}
-                                        <div className="text-3xl font-bold text-primary">{stat.number}</div>
+                                        <div className="text-primary">{stat.icon}</div>
+                                        <div className="text-3xl font-bold gradient-text">{stat.number}</div>
                                     </div>
                                     <div className="space-y-1">
                                         <div className="font-semibold text-foreground">{stat.label}</div>

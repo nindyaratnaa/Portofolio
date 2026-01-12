@@ -20,7 +20,7 @@ export function ModeToggle() {
   return (
     <>
       <Button
-        className="hidden dark:flex"
+        className="hidden dark:flex glass dark:neon"
         onClick={() => setTheme("light")}
         variant="outline"
         size="icon"
@@ -30,7 +30,7 @@ export function ModeToggle() {
       </Button>
 
       <Button
-        className="dark:hidden"
+        className="dark:hidden glass sci-fi-glow"
         onClick={() => setTheme("dark")}
         variant="outline"
         size="icon"

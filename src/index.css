@@ -4,49 +4,63 @@
 
 @layer base {
     :root {
-        --background: 0 0% 100%;
-        --foreground: 240 10% 3.9%;
+        /* Clean Sci-Fi Light Mode */
+        --background: 210 40% 98%;
+        --foreground: 220 15% 15%;
+
         --card: 0 0% 100%;
-        --card-foreground: 240 10% 3.9%;
-        --popover: 0 0% 100%;
-        --popover-foreground: 240 10% 3.9%;
-        --primary: 142.1 76.2% 36.3%;
-        --primary-foreground: 355.7 100% 97.3%;
-        --secondary: 240 4.8% 95.9%;
-        --secondary-foreground: 240 5.9% 10%;
-        --muted: 240 4.8% 95.9%;
-        --muted-foreground: 240 3.8% 46.1%;
-        --accent: 240 4.8% 95.9%;
-        --accent-foreground: 240 5.9% 10%;
-        --destructive: 0 84.2% 60.2%;
-        --destructive-foreground: 0 0% 98%;
-        --border: 240 5.9% 90%;
-        --input: 240 5.9% 90%;
-        --ring: 142.1 76.2% 36.3%;
-        --radius: 0.5rem;
+        --card-foreground: 220 15% 15%;
+
+        --primary: 15 90% 55%;      /* orange-red */
+        --primary-foreground: 0 0% 100%;
+
+        --secondary: 210 30% 94%;
+        --secondary-foreground: 220 15% 25%;
+
+        --muted: 210 25% 92%;
+        --muted-foreground: 220 10% 45%;
+
+        --accent: 270 85% 60%;      /* purple */
+        --accent-foreground: 0 0% 100%;
+
+        --border: 210 25% 88%;
+        --input: 210 25% 88%;
+        --ring: 15 90% 55%;
+
+        /* Sci-fi gradients */
+        --gradient-primary: linear-gradient(135deg, hsl(15 90% 55%), hsl(30 85% 60%));
+        --gradient-secondary: linear-gradient(135deg, hsl(270 85% 60%), hsl(290 80% 65%));
     }
 
     .dark {
-        --background: 20 14.3% 4.1%;
+        /* Glowing Metaverse Dark Mode */
+        --background: 240 100% 2%;
         --foreground: 0 0% 95%;
-        --card: 24 9.8% 10%;
+
+        --card: 240 50% 6%;
         --card-foreground: 0 0% 95%;
-        --popover: 0 0% 9%;
-        --popover-foreground: 0 0% 95%;
-        --primary: 142.1 70.6% 45.3%;
-        --primary-foreground: 144.9 80.4% 10%;
-        --secondary: 240 3.7% 15.9%;
-        --secondary-foreground: 0 0% 98%;
-        --muted: 0 0% 15%;
-        --muted-foreground: 240 5% 64.9%;
-        --accent: 12 6.5% 15.1%;
-        --accent-foreground: 0 0% 98%;
-        --destructive: 0 62.8% 30.6%;
-        --destructive-foreground: 0 85.7% 97.3%;
-        --border: 240 3.7% 15.9%;
-        --input: 240 3.7% 15.9%;
-        --ring: 142.4 71.8% 29.2%;
+
+        --primary: 320 100% 65%;    /* neon pink */
+        --primary-foreground: 0 0% 100%;
+
+        --secondary: 240 40% 12%;
+        --secondary-foreground: 0 0% 90%;
+
+        --muted: 240 35% 8%;
+        --muted-foreground: 240 15% 75%;
+
+        --accent: 15 100% 60%;      /* neon orange */
+        --accent-foreground: 0 0% 100%;
+
+        --border: 240 50% 15%;
+        --input: 240 50% 15%;
+        --ring: 320 100% 65%;
+
+        /* Cyberpunk gradients */
+        --gradient-cyber: linear-gradient(135deg, hsl(320 100% 65% / 0.8), hsl(15 100% 60% / 0.6), hsl(270 90% 70% / 0.4));
+        --gradient-space: radial-gradient(ellipse at center, hsl(240 100% 8%), hsl(240 100% 2%));
     }
+
 }
 
 @layer base {
@@ -54,6 +68,150 @@
         @apply border-border;
     }
     body {
-        @apply bg-background text-foreground;
+        @apply text-foreground;
+        background: linear-gradient(135deg, 
+          hsl(210 40% 98%), 
+          hsl(210 30% 96%)
+        );
+    }
+    
+    .dark body {
+        background: radial-gradient(ellipse at top,
+          hsl(240 100% 8%),
+          hsl(240 100% 2%)
+        ),
+        linear-gradient(135deg,
+          hsl(320 100% 65% / 0.05),
+          hsl(15 100% 60% / 0.03),
+          hsl(270 90% 70% / 0.04)
+        );
+    }
+}
+
+@layer utilities {
+  /* Light Mode - Clean Sci-Fi */
+    .glass {
+        background: linear-gradient(135deg, 
+            hsl(var(--card) / 0.9), 
+            hsl(210 30% 96% / 0.8)
+        );
+        backdrop-filter: blur(12px);
+        border: 1px solid hsl(var(--border) / 0.6);
+        box-shadow: 0 2px 7px hsl(210 25% 80% / 0.3);
+    }
+
+    .sci-fi-glow {
+        box-shadow: 
+        0 0 20px hsl(15 90% 55% / 0.3),
+        inset 0 1px 0 hsl(0 0% 100% / 0.2);
+    }
+
+    /* Dark Mode - Cyberpunk Metaverse */
+    .dark .glass {
+        background: linear-gradient(135deg,
+            hsl(240 50% 8% / 0.8),
+            hsl(320 100% 65% / 0.1),
+            hsl(15 100% 60% / 0.05),
+            hsl(270 90% 70% / 0.08)
+        );
+        backdrop-filter: blur(20px) saturate(180%);
+        border: 1px solid;
+        border-image: linear-gradient(135deg, 
+            hsla(320, 100%, 65%, 0.789), 
+            hsla(20, 12%, 95%, 0.786),
+            hsl(270 90% 70% / 0.2)
+        ) 1;
+    }
+
+    .dark .neon {
+        box-shadow:
+        0 0 20px hsl(320 100% 65% / 0.8),
+        0 0 40px hsl(320 100% 65% / 0.4),
+        0 0 80px hsl(15 100% 60% / 0.3),
+        inset 0 0 0px hsl(270 90% 70% / 0.1);
+    }
+
+    .dark .cyber-glow {
+        box-shadow:
+        0 0 30px hsl(15 100% 60% / 0.6),
+        0 0 60px hsl(270 90% 70% / 0.4),
+        0 0 100px hsl(320 100% 65% / 0.2);
+    }
+
+    .dark .space-bg {
+        background: radial-gradient(ellipse at center,
+            hsl(240 100% 8% / 0.9),
+            hsl(240 100% 2%)
+        ),
+        linear-gradient(135deg,
+            hsl(320 100% 65% / 0.03),
+            hsl(15 100% 60% / 0.02),
+            hsl(270 90% 70% / 0.04)
+        );
+    }
+
+    .gradient-text {
+        background: var(--gradient-primary);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .dark .gradient-text {
+        background: linear-gradient(135deg, 
+            hsl(320 100% 65%), 
+            hsl(15 100% 60%), 
+            hsl(270 90% 70%)
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    /* Gradient Buttons */
+    .btn-gradient {
+        background: var(--gradient-primary);
+        border: none;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .btn-gradient::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(135deg, 
+            hsl(15 90% 55% / 0.8), 
+            hsl(30 85% 60% / 0.8)
+        );
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .btn-gradient:hover::before {
+        opacity: 1;
+    }
+
+    .dark .btn-gradient {
+        background: linear-gradient(135deg,
+            hsl(320 100% 65%),
+            hsl(15 100% 60%),
+            hsl(270 90% 70%)
+        );
+        box-shadow: 0 0 20px hsl(320 100% 65% / 0.4);
+    }
+
+    .dark .btn-gradient::before {
+        background: linear-gradient(135deg,
+            hsl(320 100% 75%),
+            hsl(15 100% 70%),
+            hsl(270 90% 80%)
+        );
+    }
+
+    .dark .btn-gradient:hover {
+        box-shadow: 
+        0 0 30px hsl(320 100% 65% / 0.6),
+        0 0 60px hsl(15 100% 60% / 0.3);
     }
 }
