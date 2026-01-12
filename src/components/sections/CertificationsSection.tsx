@@ -48,7 +48,7 @@ const certifications = [
 
 export default function CertificationsSection() {
     return (
-        <section id="certifications" className="py-20 bg-muted/50">
+        <section id="certifications" className="py-20 bg-background">
             <div className="container mx-auto px-4">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}

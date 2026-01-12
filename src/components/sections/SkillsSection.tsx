@@ -30,7 +30,7 @@ const skills = [
 
 export default function SkillsSection() {
     return (
-        <section className="relative py-28 bg-background overflow-hidden">
+        <section className="relative py-28 bg-muted/20 overflow-hidden">
         {/* Soft ambient glow */}
         <div className="absolute inset-0 -z-10">
             <div className="absolute top-1/4 left-1/3 w-[400px] h-[400px] bg-primary/10 rounded-full blur-[120px]" />

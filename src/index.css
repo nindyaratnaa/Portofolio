@@ -4,14 +4,13 @@
 
 @layer base {
     :root {
-        /* Clean Sci-Fi Light Mode */
-        --background: 210 40% 98%;
+        --background: 210 40% 100%;
         --foreground: 220 15% 15%;
 
         --card: 0 0% 100%;
         --card-foreground: 220 15% 15%;
 
-        --primary: 15 90% 55%;      /* orange-red */
+        --primary: 15 90% 55%;      
         --primary-foreground: 0 0% 100%;
 
         --secondary: 210 30% 94%;
@@ -20,14 +19,13 @@
         --muted: 210 25% 92%;
         --muted-foreground: 220 10% 45%;
 
-        --accent: 270 85% 60%;      /* purple */
+        --accent: 270 85% 60%;      
         --accent-foreground: 0 0% 100%;
 
         --border: 210 25% 88%;
         --input: 210 25% 88%;
         --ring: 15 90% 55%;
 
-        /* Sci-fi gradients */
         --gradient-primary: linear-gradient(135deg, hsl(15 90% 55%), hsl(30 85% 60%));
         --gradient-secondary: linear-gradient(135deg, hsl(270 85% 60%), hsl(290 80% 65%));
     }
@@ -70,7 +68,7 @@
     body {
         @apply text-foreground;
         background: linear-gradient(135deg, 
-          hsl(210 40% 98%), 
+          hsl(210 40% 100%), 
           hsl(210 30% 96%)
         );
     }
